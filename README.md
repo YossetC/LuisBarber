@@ -47,9 +47,6 @@ barberia/
    ```
 2. Abre `index.html` en tu navegador
 
-### Contacto
-- **WhatsApp**: +52 1 56 6933 0062
-- **Ubicación**: Jiutepec, Morelos
 
 ---
 
@@ -99,10 +96,6 @@ barberia/
    git clone https://github.com/your-username/luis-barber.git
    ```
 2. Open `index.html` in your browser
-
-### Contact
-- **WhatsApp**: +52 1 56 6933 0062
-- **Location**: Jiutepec, Morelos
 
 ---
 
