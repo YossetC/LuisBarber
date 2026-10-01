@@ -1,0 +1,47 @@
+# ============================================
+# Luis Barber - .gitignore
+# ============================================
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencias
+node_modules/
+vendor/
+
+# Archivos de build
+dist/
+build/
+*.log
+
+# Archivos temporales
+tmp/
+temp/
+.cache/
+
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# Archivos de base de datos
+*.sqlite
+*.db
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+
+# Imágenes temporales
+*.tmp
+*.bak

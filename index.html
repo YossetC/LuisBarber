@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Barber | Barbería Premium</title>
+    <meta name="description" content="Luis Barber - Barbería premium en Cuernavaca, Morelos. Cortes clásicos y contemporáneos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdf9e7',
+                            100: '#faf0c3',
+                            200: '#f5e08a',
+                            300: '#efc94d',
+                            400: '#e8b820',
+                            500: '#d4a017',
+                            600: '#b8860b',
+                            700: '#8b6508',
+                            800: '#6b4e06',
+                            900: '#4a3504',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#242424',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-50 dark:bg-dark-900 text-stone-800 dark:text-stone-200 font-body transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-2">
+                    <i class="ri-scissors-cut-fill text-3xl text-gold-500"></i>
+                    <span class="font-display text-2xl font-bold text-stone-900 dark:text-white">Luis <span class="text-gold-500">Barber</span></span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="nav-link hover:text-gold-500 transition-colors">Inicio</a>
+                    <a href="#nosotros" class="nav-link hover:text-gold-500 transition-colors">Nosotros</a>
+                    <a href="#servicios" class="nav-link hover:text-gold-500 transition-colors">Servicios</a>
+                    <a href="#galeria" class="nav-link hover:text-gold-500 transition-colors">Galería</a>
+                    <a href="#cita" class="nav-link hover:text-gold-500 transition-colors">Agendar</a>
+                    <a href="#contacto" class="nav-link hover:text-gold-500 transition-colors">Contacto</a>
+                </div>
+                
+                <!-- Right Side -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-stone-200 dark:hover:bg-dark-700 transition-colors" aria-label="Cambiar tema">
+                        <i class="ri-sun-line text-xl dark:hidden"></i>
+                        <i class="ri-moon-line text-xl hidden dark:block"></i>
+                    </button>
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/5215669330062?text=Hola%20Luis%20Barber%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="hidden sm:flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition-colors">
+                        <i class="ri-whatsapp-fill"></i>
+                        <span class="text-sm font-medium">WhatsApp</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-stone-200 dark:hover:bg-dark-700 transition-colors">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-800 border-t border-stone-200 dark:border-dark-700">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#inicio" class="block py-2 hover:text-gold-500 transition-colors">Inicio</a>
+                <a href="#nosotros" class="block py-2 hover:text-gold-500 transition-colors">Nosotros</a>
+                <a href="#servicios" class="block py-2 hover:text-gold-500 transition-colors">Servicios</a>
+                <a href="#galeria" class="block py-2 hover:text-gold-500 transition-colors">Galería</a>
+                <a href="#cita" class="block py-2 hover:text-gold-500 transition-colors">Agendar</a>
+                <a href="#contacto" class="block py-2 hover:text-gold-500 transition-colors">Contacto</a>
+                <a href="https://wa.me/5215669330062?text=Hola%20Luis%20Barber%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-full">
+                    <i class="ri-whatsapp-fill"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         SECTION 1: HERO
+    ============================================ -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="media/foto1.webp" alt="Barbería" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up animation-delay-100">
+                Estilo & <span class="text-gold-400">Elegancia</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-300 mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+                El lugar donde encuentras la mejor versión de ti, a veces un corte dice más que mil palabras.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-300">
+                <a href="#servicios" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 flex items-center space-x-2">
+                    <i class="ri-scissors-line"></i>
+                    <span>Ver servicios</span>
+                </a>
+                <a href="#cita" class="border-2 border-white text-white hover:bg-white hover:text-stone-900 px-8 py-4 rounded-full font-medium transition-all flex items-center space-x-2">
+                    <i class="ri-calendar-check-line"></i>
+                    <span>Agendar cita</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="ri-arrow-down-line text-3xl text-white/70"></i>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: NOSOTROS (Misión, Visión, Quiénes Somos)
+    ============================================ -->
+    <section id="nosotros" class="py-24 bg-white dark:bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-medium tracking-widest uppercase text-sm">Nosotros</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 text-stone-900 dark:text-white">
+                    Conoce <span class="text-gold-500">Luis Barber</span>
+                </h2>
+                <div class="gold-line mt-6"></div>
+            </div>
+            
+            <!-- Introducción -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="relative">
+                    <img src="media/foto1.webp" alt="Barbero trabajando" class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-gold-500 text-white p-6 rounded-2xl shadow-lg hidden md:block">
+                        <div class="text-4xl font-bold font-display">100%</div>
+                        <div class="text-sm">Satisfacción</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl font-bold mb-6 text-stone-900 dark:text-white">Introducción</h3>
+                    <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+                        En Luis Barber al servicio del cliente buscando las técnicas clásicas con las últimas tendencias para ofrecerte un servicio de barbería excepcional que realza tu estilo personal.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Visión y Misión -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Visión -->
+                <div class="bg-stone-50 dark:bg-dark-700 rounded-2xl p-8 hover-lift">
+                    <div class="w-14 h-14 bg-gold-100 dark:bg-gold-900/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-eye-line text-2xl text-gold-500"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Visión</h3>
+                    <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+                        Ser una gran familia de barbero garantizando profesionalismo en cada corte impregnado con un toque de modernidad sin perder la base de un buen corte en tiempos rápidos.
+                    </p>
+                </div>
+                
+                <!-- Misión -->
+                <div class="bg-stone-50 dark:bg-dark-700 rounded-2xl p-8 hover-lift">
+                    <div class="w-14 h-14 bg-gold-100 dark:bg-gold-900/30 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ri-flag-line text-2xl text-gold-500"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Misión</h3>
+                    <p class="text-stone-600 dark:text-stone-400 leading-relaxed">
+                        Brindar una experiencia de barbería excepcional y profesional, ofreciendo servicios de la más alta calidad a un costo accesible priorizando la excelencia en cada corte para resaltar el estilo único de nuestros clientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: SERVICIOS
+    ============================================ -->
+    <section id="servicios" class="py-24 bg-stone-100 dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-medium tracking-widest uppercase text-sm">Servicios</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 text-stone-900 dark:text-white">
+                    Servicios & <span class="text-gold-500">Precios</span>
+                </h2>
+                <div class="gold-line mt-6"></div>
+                <p class="text-stone-600 dark:text-stone-400 mt-6 max-w-2xl mx-auto">
+                    Ofrecemos una variedad de servicios de alta calidad para satisfacer todas tus necesidades de estilo.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center">
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Corte clásico</h3>
+                    <span class="text-3xl font-bold text-gold-500">$130</span>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center">
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Corte Fade</h3>
+                    <span class="text-3xl font-bold text-gold-500">$120</span>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center">
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Corte regular</h3>
+                    <span class="text-3xl font-bold text-gold-500">$80</span>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center">
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Barba</h3>
+                    <span class="text-3xl font-bold text-gold-500">$80</span>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group text-center">
+                    <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">Cejas</h3>
+                    <span class="text-3xl font-bold text-gold-500">$30</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: GALERÍA
+    ============================================ -->
+    <section id="galeria" class="py-24 bg-white dark:bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 text-stone-900 dark:text-white">
+                    Galería de <span class="text-gold-500">estilos</span>
+                </h2>
+                <div class="gold-line mt-6"></div>
+            </div>
+            
+            <!-- Galería con imágenes -->
+            <div class="grid grid-cols-5 gap-3">
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square">
+                    <img src="media/corte_clasico.webp" alt="Corte clásico" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square">
+                    <img src="media/corte_fade.webp" alt="Corte Fade" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square">
+                    <img src="media/corte_regular.webp" alt="Corte regular" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square">
+                    <img src="media/corte_barba.webp" alt="Barba" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square">
+                    <img src="media/corte_cejas.webp" alt="Cejas" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5: AGENDAR CITA
+    ============================================ -->
+    <section id="cita" class="py-24 bg-stone-100 dark:bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-medium tracking-widest uppercase text-sm">Reservaciones</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 text-stone-900 dark:text-white">
+                    Agenda tu <span class="text-gold-500">cita</span>
+                </h2>
+                <div class="gold-line mt-6"></div>
+                <p class="text-stone-600 dark:text-stone-400 mt-6 max-w-2xl mx-auto">
+                    Selecciona el servicio que deseas y te contactaremos por WhatsApp para confirmar tu cita.
+                </p>
+            </div>
+            
+            <!-- Booking Form -->
+            <div class="bg-white dark:bg-dark-800 rounded-3xl p-8 md:p-12 shadow-xl">
+                <!-- Step 1: Select Service -->
+                <div id="step-1" class="booking-step">
+                    <h3 class="font-display text-2xl font-bold mb-6 text-stone-900 dark:text-white">
+                        <span class="text-gold-500">1.</span> Elige tu servicio
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4" id="service-options">
+                        <!-- Services will be populated by JS -->
+                    </div>
+                </div>
+                
+                <!-- Step 2: Personal Info -->
+                <div id="step-2" class="booking-step hidden">
+                    <h3 class="font-display text-2xl font-bold mb-6 text-stone-900 dark:text-white">
+                        <span class="text-gold-500">2.</span> Tus datos
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Tu nombre</label>
+                            <input type="text" id="client-name" placeholder="Introduce tu nombre" class="w-full px-4 py-3 rounded-xl border border-stone-300 dark:border-dark-600 bg-white dark:bg-dark-700 text-stone-900 dark:text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Fecha preferida</label>
+                            <input type="date" id="client-date" class="w-full px-4 py-3 rounded-xl border border-stone-300 dark:border-dark-600 bg-white dark:bg-dark-700 text-stone-900 dark:text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Hora preferida</label>
+                            <select id="client-time" class="w-full px-4 py-3 rounded-xl border border-stone-300 dark:border-dark-600 bg-white dark:bg-dark-700 text-stone-900 dark:text-white focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-all">
+                                <option value="">Selecciona una hora</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Confirmation -->
+                <div id="step-3" class="booking-step hidden">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="ri-check-line text-4xl text-green-600"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-4 text-stone-900 dark:text-white">¡Cita preparada!</h3>
+                        <p class="text-stone-600 dark:text-stone-400 mb-8">
+                            Revisa tu mensaje en WhatsApp y envíalo para confirmar tu cita.
+                        </p>
+                        <div class="bg-stone-50 dark:bg-dark-700 rounded-xl p-6 text-left mb-8">
+                            <h4 class="font-bold text-stone-900 dark:text-white mb-4">Resumen de tu cita:</h4>
+                            <div id="booking-summary" class="space-y-2 text-stone-600 dark:text-stone-400"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between mt-8">
+                    <button id="btn-back" class="hidden px-6 py-3 rounded-xl border border-stone-300 dark:border-dark-600 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-dark-700 transition-colors flex items-center space-x-2">
+                        <i class="ri-arrow-left-line"></i>
+                        <span>Regresar</span>
+                    </button>
+                    <div class="flex-1"></div>
+                    <button id="btn-continue" class="px-8 py-3 rounded-xl bg-gold-500 hover:bg-gold-600 text-white font-medium transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <span>Continuar</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6: CONTACTO
+    ============================================ -->
+    <section id="contacto" class="py-24 bg-white dark:bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-medium tracking-widest uppercase text-sm">Contacto</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 text-stone-900 dark:text-white">
+                    Visítanos o <span class="text-gold-500">contáctanos</span>
+                </h2>
+                <div class="gold-line mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ri-map-pin-line text-2xl text-gold-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-1">Ubicación</h3>
+                            <p class="text-stone-600 dark:text-stone-400">Jiutepec, Morelos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ri-time-line text-2xl text-gold-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-1">Horarios de atención</h3>
+                            <p class="text-stone-600 dark:text-stone-400">Lunes a viernes: 11:30 - 6:30 pm<br>Miércoles (a domicilio): 12:30 - 5:00 pm<br>Fines de semana: 10:00 - 6:30 pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ri-whatsapp-line text-2xl text-gold-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-1">WhatsApp</h3>
+                            <a href="https://wa.me/5215669330062" target="_blank" class="text-stone-600 dark:text-stone-400 hover:text-gold-500 transition-colors">+52 1 56 6933 0062</a>
+                        </div>
+                    </div>
+                    
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/5215669330062?text=Hola%20Luis%20Barber%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl transition-all transform hover:scale-105 shadow-lg">
+                        <i class="ri-whatsapp-fill text-2xl"></i>
+                        <span class="font-medium text-lg">Enviar WhatsApp</span>
+                    </a>
+                </div>
+                
+                <!-- Map -->
+                <div class="rounded-2xl overflow-hidden shadow-lg h-96 md:h-full min-h-[400px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120432.0748!2d-99.2117!3d18.8528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDUxJzA4LjgiTiA5OcKwMTInNDIuNCJX!5e0!3m2!1ses!2smx!4v1699999999999!5m2!1ses!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="bg-stone-900 dark:bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="ri-scissors-cut-fill text-3xl text-gold-500"></i>
+                        <span class="font-display text-2xl font-bold">Luis <span class="text-gold-500">Barber</span></span>
+                    </div>
+                    <p class="text-stone-400 mb-6 max-w-md">
+                        Tu barbería de confianza en Cuernavaca. Estilo y elegancia para cada cliente.
+                    </p>
+                    <a href="https://wa.me/5215669330062?text=Hola%20Luis%20Barber%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full transition-colors">
+                        <i class="ri-whatsapp-fill"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-stone-400 hover:text-gold-500 transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-stone-400 hover:text-gold-500 transition-colors">Nosotros</a></li>
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Servicios</a></li>
+                        <li><a href="#galeria" class="text-stone-400 hover:text-gold-500 transition-colors">Galería</a></li>
+                        <li><a href="#cita" class="text-stone-400 hover:text-gold-500 transition-colors">Agendar</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Servicios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Corte clásico</a></li>
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Corte Fade</a></li>
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Corte regular</a></li>
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Barba</a></li>
+                        <li><a href="#servicios" class="text-stone-400 hover:text-gold-500 transition-colors">Cejas</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-8 text-center">
+                <p class="text-stone-500 text-sm">
+                    &copy; 2026 Luis Barber. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5215669330062?text=Hola%20Luis%20Barber%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110">
+        <i class="ri-whatsapp-fill text-2xl"></i>
+    </a>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

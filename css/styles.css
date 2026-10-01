@@ -1,0 +1,311 @@
+/* ============================================
+   LUIS BARBER - Custom Styles
+   ============================================ */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4a017;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b8860b;
+}
+
+/* Navbar Scroll Effect */
+#navbar {
+    background: transparent;
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark #navbar.scrolled {
+    background: rgba(18, 18, 18, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    color: #44403c;
+    transition: color 0.3s ease;
+}
+
+.dark .nav-link {
+    color: #d6d3d1;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4a017;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animation-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease forwards;
+}
+
+/* ============================================
+   SERVICE CARDS
+   ============================================ */
+.service-card {
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: #d4a017;
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   GALLERY ITEMS
+   ============================================ */
+.gallery-item {
+    cursor: pointer;
+}
+
+/* ============================================
+   BOOKING SYSTEM
+   ============================================ */
+.booking-step {
+    animation: fadeIn 0.5s ease;
+}
+
+.service-option {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-option:hover {
+    border-color: #d4a017;
+    transform: translateY(-2px);
+}
+
+.service-option.selected {
+    border-color: #d4a017;
+    background: rgba(212, 160, 23, 0.1);
+}
+
+/* ============================================
+   DECORATIVE ELEMENTS
+   ============================================ */
+.gold-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4a017, #f5e08a);
+    margin: 0 auto;
+}
+
+/* Card Hover Effect */
+.hover-lift {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon glow on hover for Visión y Misión */
+.hover-lift:hover .ri-eye-line,
+.hover-lift:hover .ri-flag-line {
+    filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.6));
+    transition: filter 0.3s ease;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+#mobile-menu {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   WHATSAPP PULSE ANIMATION
+   ============================================ */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.fixed.bottom-6.right-6 {
+    animation: pulse-green 2s infinite;
+}
+
+/* Fix for mobile: prevent floating button from overlapping form buttons */
+@media (max-width: 768px) {
+    .fixed.bottom-6.right-6 {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    /* Add padding to booking form on mobile to prevent overlap */
+    #cita .bg-white.dark\:bg-dark-800 {
+        padding-bottom: 5rem;
+    }
+}
+
+/* ============================================
+   SELECTION & SCROLL
+   ============================================ */
+::selection {
+    background: #d4a017;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 640px) {
+    .font-display {
+        letter-spacing: -0.02em;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    nav,
+    .fixed.bottom-6.right-6,
+    #mobile-menu {
+        display: none !important;
+    }
+}
